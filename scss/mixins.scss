@@ -1,0 +1,24 @@
+@mixin flex-center($direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @if $direction != row{
+      flex-direction: $direction;
+    }
+  }
+  @mixin flex-row($aligned: flex-start){
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    @if $aligned != flex-start{
+      justify-content: $aligned;
+    }
+  }  
+  @mixin flex-column($aligned: flex-start){
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @if $aligned != flex-start{
+      align-items: $aligned;
+    }
+  }
