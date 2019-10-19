@@ -14,11 +14,11 @@
       justify-content: $aligned;
     }
   }  
-  @mixin flex-column($aligned: flex-start){
+  @mixin flex-column($aligned: scretch){
     display: flex;
     justify-content: center;
     flex-direction: column;
-    @if $aligned != flex-start{
+    @if $aligned != scretch{
       align-items: $aligned;
     }
   }
