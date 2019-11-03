@@ -1,57 +1,39 @@
-window.addEventListener("DOMContentLoaded", function () {
+const requestURL = 'https://jsonplaceholder.typicode.com/users';
 
-document.querySelector("#load").addEventListener("click", load)
+function sendRequest(method, url, body = null) {
+  const headers = {
+      "Content-Type": 'application/json'
+  };
 
-async function load () { //делаем асинхроной функ
-  
-    const url = "http://jsonplaceholder.typicode.com/users";
-    // console.log("try");
-//пример с "не асинк" функцией
-//    fetch(url)
-//    .then((res)=>{ //res то что отправит сервер
-// // console.log(res);
-// return res.json() //получили обьект рес и возвращаем нрвый промис
-//    })
-//    .then((data)=> {
-// //    console.log(data);
-// const ul = document.getElementById("list")
-// const html = data.map((item)=>{
-
-// return `<li>${item.id} ${item.name} (${item.email})</li>`
-// })
-// // console.log(html);
-// ul.insertAdjacentHTML("afterbegin", html.join(" "))//join превращает в обычную строку, инсертАджачент позволят в какой то место положить хтмл набор
-//    })
-//когда функция асинk
-const res = await fetch(url)
-const data = await res.json()
-const ul = document.getElementById("list")
-
-const html = data.map((item)=>{
-
-return `<li>${item.id} ${item.name} (${item.email})</li>`
-})
-// console.log(html);
-
- ul.insertAdjacentHTML("afterbegin", html.join(" ")) 
-   
+  return fetch(url, {
+      method: method,
+      body: JSON.stringify(body),
+      headers: headers
+  }).then(response => {
+      if(response.ok) {
+          return response.json()
+      }else{
+          return response.json().then(err => {
+              const e = new Error("oops...");
+              e.data = err;
+              throw e
+          });
+      }
+  });
 }
 
+// get
+// sendRequest('GET', requestURL)
+//     .then(data => console.log(data))
+//     .catch(err => console.error(err));
 
 
+//post
+const body = {
+    name: 'denfed',
+    age: '23'
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-});
+sendRequest('POST', requestURL, body)
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
