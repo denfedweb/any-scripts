@@ -2,15 +2,18 @@ new Promise(function(resolve, reject) {
     setTimeout(()=>{
         resolve();
     }, 2000);
-}).then( async ()=>{
-    console.log("first then")
-    return await new Promise((resolve, reject)=>{
+}).then(()=>{
+    // ожидаем выполнение первого промиса, и выводим в консоль 
+    console.log("First Promise Resolved!");
+    // возвращаем новый промис
+    return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-          resolve("return then");
-            
-        }, 2000)
+            // промис возвращает текст
+            resolve("Second Promise Resolved!");
+        }, 2000);
     })
 }).then((res)=>{
-    console.log(res)
-})
+    // ожидаем выполнение предыдущего then'a, и выводим в консоль его ответ
+    console.log(res);
+});
 
