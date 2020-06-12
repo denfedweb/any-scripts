@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-161189952-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-161189952-1");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Frontend Web Developer</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/html.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/930caa097c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link href="styles/style.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="grey darken-4">
+    <main>
+      <div class="player-list-block" style="display: none;">
+        <div class="player-list-overlay">
+          <i class="fas fa-times close-playlist"></i>
+          <ul class="player-list"></ul>
+        </div>
+      </div>
+      <div class="row full-content">
+        <div id="video-viewport">
+          <video
+            id="video-background"
+            width="1920"
+            height="1280"
+            autoplay
+            muted
+            loop
+          >
+            <source
+              class="video-src"
+              src="/assets/video/binary-background.mp4"
+              type="video/mp4"
+            />
+            <!-- <source src="https://storage.googleapis.com/coverr-main/webm/Winter-Grass.webm" type="video/webm" /> -->
+          </video>
+        </div>
+        <div class="col s12 m7 l8 left-col">
+          <h1 class="center-align title">
+            <div class="react-img">
+              <i class="fas fa-play player-btn"></i>
+              <i class="fas fa-pause player-btn" style="display: none;"></i>
+              <img src="assets/img/react-logo.svg" class="App-logo" />
+            </div>
+            <div class="header-title">
+              <div class="my-player" style="display: none;">
+                <span class="music-title"></span>
+                <div class="player-title">
+                  <i
+                    class="fas fa-volume-up player-btn-two volume-btn"
+                    data-type="up"
+                  ></i>
+                  <i
+                    class="fas fa-volume-mute player-btn-two volume-btn"
+                    data-type="mute"
+                    style="display: none;"
+                  ></i>
+                  <i
+                    class="fas fa-arrow-circle-left next-btn-player"
+                    data-next="-1"
+                  ></i>
+                  <canvas
+                    id="myCanvas"
+                    width="300"
+                    height="60"
+                    style="display: none;"
+                  ></canvas>
+                  <div class="preloader-wrapper active">
+                    <div class="spinner-layer spinner-blue">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-red">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-yellow">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-green">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <i
+                    class="fas fa-arrow-circle-right next-btn-player"
+                    data-next="1"
+                  ></i>
+                  <i class="fas fa-list player-btn-two"></i>
+                </div>
+              </div>
+
+              <a title="click to download CV" style="color: #65DAFB" href="/assets/Denis's Resume.pdf" download>Frontend Web Developer</a> 
+          
+            </div>
+          </h1>
+          <div class="row">
+            <div class="col m12 l5 offset-l1">
+              <h3 class="title-ul">Skills:</h3>
+              <ul class="author-info">
+                <li>
+                  <span>HTML5:</span> Twig, hbs, Bootstrap, UIkit, etc.
+                </li>
+                <li><span>CSS3:</span> sass, less, stylus, etc.</li>
+                <li><span>JavaScript:</span> jQuery, es6+</li>
+                <li><span>Rest api:</span> ajax, axios, fetch, etc.</li>
+                <li><span>React:</span> hooks, etc.</li>
+                <li><span>Redux:</span> thunk, etc.</li>
+                <li><span>Node js:</span> express, mongoose, etc.</li>
+                <li><span>JS Testing:</span> Jest</li>
+                <li><span>Database:</span> MongoDB</li>
+                <li><span>Other:</span> npm, yarn, webpack, gulp, git</li>
+              </ul>
+            </div>
+            <div class="col m12 l5 offset-l1">
+              <h3 class="title-ul">Experience:</h3>
+              <ul class="author-info">
+                <li><span>Place of work:</span> Sonero Com</li>
+                <li><span>Position:</span> Frontend Web Developer</li>
+                <li>
+                  <span>Experience in the company:</span>
+                  <span class="years date">01/07/2019 - NOW</span>
+                </li>
+              </ul>
+              <h3 class="title-ul">Projects:</h3>
+              <ul class="author-info">
+                <li>
+                  <span>NYF:</span>
+                  <a href="https://nyfurnitureoutlets.com/" target="_blank"
+                    >nyfurnitureoutlets</a
+                  >
+                </li>
+                <li>
+                  <span>NFO:</span>
+                  <a href="https://www.nfoutlet.com/" target="_blank"
+                    >nfoutlet</a
+                  >
+                </li>
+                <li>
+                  <span>LR:</span>
+                  <a href="https://www.liberatingresearch.com/" target="_blank"
+                    >liberating research</a
+                  >
+                </li>
+                <li>
+                  <span>github:</span>
+                  <a href="https://github.com/denfedweb/" target="_blank"
+                    >home projects</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m5 l4 valign-wrapper right-col">
+          <div class="img-wrap">
+            <img class="img-me" src="./assets/img/me.jpeg" alt="denfedweb" />
+          </div>
+          <h5>Basic Information</h5>
+          <ul class="author-info center-align">
+            <li><span>Name:</span> Denis</li>
+            <li><span>Surname:</span> Fedorovici</li>
+            <li>
+              <span>Phone:</span> <a href="tel: +37360368152">+373 60368152</a>
+            </li>
+            <li>
+              <span>Mail:</span>
+              <a href="mailto:denfedweb@mail.ru">denfedweb@mail.ru</a>
+            </li>
+          </ul>
+          <h5>Education</h5>
+          <ul class="author-info center-align">
+            <li><span>Education:</span> Higher</li>
+            <li><span>Period of study:</span> 2015-2019</li>
+            <li><span>Educational Ins.:</span> Slavonic University</li>
+            <li><span>Specialization:</span> Information Technology</li>
+          </ul>
+          <h5>Social Networks</h5>
+          <ul class="social-info">
+            <li>
+              <a href="https://vk.com/denfedweb" target="_blank"
+                ><i class="fab fa-vk"></i
+              ></a>
+              <a href="https://github.com/denfedweb" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="http://t.me/denfedweb" target="_blank"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/denfedweb/" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100001728476381"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.1.3/dist/howler.min.js"></script>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

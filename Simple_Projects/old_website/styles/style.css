@@ -1,0 +1,374 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: white;
+}
+
+main {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  min-height: 100vh;
+}
+
+.full-content {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.img-wrap {
+  margin-top: 17px;
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.right-col {
+  height: 906px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-left: 1px solid #d81b60;
+}
+
+.right-col h5 {
+  border-bottom: 1px solid #d81b60;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  color: #fff;
+  margin-top: 0;
+  position: relative;
+}
+
+.title-ul {
+  position: relative;
+}
+
+.title-ul::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 280px;
+  bottom: -10px;
+  background: #d81b60;
+  left: 0;
+}
+.author-info {
+  font-size: 23px;
+  margin: 0.5rem 0;
+}
+.social-info {
+  font-size: 40px;
+  margin: 0.5rem 0;
+}
+.social-info i {
+  color: #039be5;
+}
+.author-info span {
+  color: #ef9a9a;
+}
+
+.date {
+  color: #039be5 !important;
+}
+
+.App-logo {
+  height: 300px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.react-img {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.player-btn {
+  position: absolute;
+  z-index: 99;
+  font-size: 28px;
+  cursor: pointer;
+  color: #285964;
+}
+
+.header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#video-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#myCanvas {
+  padding-top: 10px;
+}
+.player-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.next-btn-player {
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.next-btn-player:hover {
+  color: #65dafb;
+}
+
+.music-title {
+  font-size: 25px;
+  height: 15px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #65dafb;
+}
+
+.preloader-wrapper {
+  margin: 0px 125px;
+}
+
+.player-btn-two {
+  cursor: pointer;
+  font-size: 30px;
+  width: 35px;
+}
+
+.player-btn-two:hover {
+  color: #65dafb;
+}
+
+.fa-volume-mute {
+  padding-right: 4px;
+}
+
+.player-list-block {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+}
+
+.player-list {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(220, 20, 60, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url("../assets/img/player-list.jpg");
+  background-image: -o-linear-gradient(
+      left,
+      rgba(220, 20, 60, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../assets/img/player-list.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(220, 20, 60, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../assets/img/player-list.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.player-list-overlay {
+  position: relative;
+  z-index: 99999;
+}
+
+.close-playlist {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.close-playlist:hover {
+  color: #d81b60;
+}
+
+.song {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.song:hover {
+  font-size: 22px !important;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fa-atom {
+  margin-right: 5px;
+  color: #65dafb;
+}
+
+.loading-song {
+  position: relative;
+  overflow: hidden;
+  font-size: 22px !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#000),
+    color-stop(#fff),
+    to(#000)
+  );
+  background: -o-linear-gradient(left, #000, #fff, #000);
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  -webkit-animation: animate 1s linear infinite;
+  animation: animate 1s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@media only screen and (max-width: 600px)  {
+  video{
+    display: none;
+  }
+}
