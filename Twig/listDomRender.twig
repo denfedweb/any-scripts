@@ -1,0 +1,59 @@
+{% set taxonName = app.request.query.get('taxonName') %}
+{% set taxons = get_cached_taxons_for_vendors(vendor, true) %}
+
+{% set uniqueTaxons = [] %}
+{% set minLevel = 100 %}
+{% for taxon in taxons %}
+    {% set minLevel = taxon.level < minLevel ? taxon.level : minLevel %}
+{% endfor %}
+
+{% for taxon in taxons %}
+    {% if taxon.parent.id not in uniqueTaxons %}
+        {{ _self.recursiveList(taxons, taxon.parent.id, minLevel, vendor.slug) }}
+        {% set uniqueTaxons = uniqueTaxons|merge([taxon.parent.id]) %}
+    {% endif %}
+{% endfor %}
+
+{% macro recursiveList(objects, parent, level, slug) %}
+    {% set _hit = false %}
+    {% for _item in objects if _item.level == level %}
+        {% set _value = ( null != _item.parent and null != _item.parent.id ? _item.parent.id : null ) %}
+        {% if (parent == _value) %}
+            {% if not _hit %}
+                <ul class="catalog-list">
+                {% set _hit = true %}
+            {% endif %}
+            <li>
+                {% if _item.level == 1 %}
+                    <span class="catalog-list-toggle js-catalog-list">
+                        {{ _item.name }}
+                        <i class="fa fa-angle-right" style="display: none" aria-hidden="true"></i>
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                {% elseif _item.level == 2 %}
+                    {% if _item.children|length == 0 %}
+                        <a href="{{ path('app_products_for_vendor_by_taxon',{'vendorSlug': slug, 'taxonShortSlug': _item.shortSlug}) }}"
+                           class="item">
+                            {{ _item.name }}
+                        </a>
+                    {% else %}
+                        <span class="catalog-list-toggle js-catalog-list">
+                            {{ _item.name }}
+                            <i class="fa fa-angle-right" style="display: none" aria-hidden="true"></i>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ path('app_products_for_vendor_by_taxon',{'vendorSlug': slug, 'taxonShortSlug': _item.shortSlug}) }}"
+                       class="item">
+                        {{ _item.name }}
+                    </a>
+                {% endif %}
+                {{ _self.recursiveList(objects, _item.id, level + 1, slug) }}
+            </li>
+        {% endif %}
+    {% endfor %}
+    {% if _hit %}
+        </ul>
+    {% endif %}
+{% endmacro %}
